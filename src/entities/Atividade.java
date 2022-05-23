@@ -56,10 +56,12 @@ public class Atividade {
 	
 	public void adicionarCrianca(Crianca crianca) {
 		criancas.add(crianca);
+		crianca.adicionarAtividade(this);
 	}
 	
 	public void removerCrianca(Crianca crianca) {
 		criancas.remove(crianca);
+		crianca.removerAtividade(this);
 	}
 	
 	public void adicionarVoluntario(Voluntario voluntario) {
@@ -69,10 +71,6 @@ public class Atividade {
 	public void removerVoluntario(Voluntario voluntario) {
 		voluntarios.remove(voluntario);
 	}
-	
-	
-	
-	
 	
 	
 }

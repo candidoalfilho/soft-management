@@ -12,17 +12,19 @@ public class Crianca extends Pessoa {
 	
 	private Voluntario voluntario;
 	private ArrayList<Atividade> atividades = new ArrayList<>();
+	private Responsavel responsavel;
 
 	public Crianca(String nome) {
 		super(nome);
 	}
 	
-	public Crianca(String nome, Date dataDeVinculo, String condicao, Date dataNasc, String imageUrl) {
+	public Crianca(String nome, Date dataDeVinculo, String condicao, Date dataNasc, String imageUrl, Responsavel responsavel) {
 		super(nome);
 		this.dataDeVinculo = dataDeVinculo;
 		this.condicao = condicao;
 		this.dataNasc = dataNasc;
 		this.imageUrl = imageUrl;
+		this.responsavel = responsavel;
 	}
 	
 	public void adicionarAtividade(Atividade atividade) {
@@ -73,6 +75,7 @@ public class Crianca extends Pessoa {
 
 	public void setVoluntario(Voluntario voluntario) {
 		this.voluntario = voluntario;
+		voluntario.adicionarCrianca(this);
 	}
 
 	public ArrayList<Atividade> getAtividades() {
@@ -86,6 +89,17 @@ public class Crianca extends Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public Responsavel getResponsavel() {
+		return responsavel;
+	}
+
+	public void setResponsavel(Responsavel responsavel) {
+		this.responsavel = responsavel;
+		responsavel.adicionarCrianca(this);
+	}
+	
+	
 	
 	
 	
